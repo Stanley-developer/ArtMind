@@ -85,15 +85,6 @@ frontend/src/     React pages and components
 documentation/    Project documents for submission
 ```
 
-## Team
-
-| Name | GitHub | Role |
-|------|--------|------|
-| **Stanley** | `Stanley-developer` | Backend: server and database *(team leader)* |
-| **Victor** | *(to be added)* | Backend: server-side AI and documentation |
-| **Amanda** | *(to be added)* | Frontend: pages and browser AI |
-| **Shalom** | `Shalom1515` | Frontend: components and styling |
-
 ## Contributing
 
 Before your first commit, set your identity on your own laptop, using the email
