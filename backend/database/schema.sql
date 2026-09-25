@@ -1,0 +1,1 @@
+-- CREATE TABLE statements - copy them from documentation/04_DATABASE_DESIGN.md - Owner: STANLEY

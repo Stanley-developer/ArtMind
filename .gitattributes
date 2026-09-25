@@ -1,0 +1,14 @@
+# Keep line endings consistent for everyone on the team.
+# Without this, Windows and Mac laptops show every file as changed even
+# when nobody edited it, which makes pull requests impossible to read.
+* text=auto eol=lf
+
+# These are pictures, not text. Git must not try to change anything inside them.
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.db binary
+
+# Windows batch files only work with Windows line endings
+*.bat text eol=crlf

@@ -1,0 +1,29 @@
+# Node packages - NEVER put these in the submission ZIP (about 300 MB).
+# Your teammates get them by running "npm install".
+node_modules/
+frontend/dist/
+
+# Photos that users upload while testing (keep the folder, ignore the contents)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Design mockup prompts - kept on our machines, not in the public repo
+documentation/10_DESIGN_PROMPTS.md
+
+# Secrets. The repo is public - never commit these.
+.env
+.env.*
+!.env.example
+
+# Editor and Windows junk
+.vscode/
+.idea/
+.claude/
+Thumbs.db
+desktop.ini
+
+# Stanley's private notes. Not part of the project, not for submission.
+LEADER_BRIEF.md
+
+# NOTE: backend/database/artmind.db is NOT ignored on purpose.
+# The college asked for the database to be submitted with the code.
