@@ -1,4 +1,4 @@
-# 08 — Who Builds What
+# 08 - Who Builds What
 
 **Owner:** VICTOR
 
@@ -12,36 +12,38 @@ Think of ArtMind as a restaurant.
         THE DINING ROOM                    THE KITCHEN
      what the visitor sees            where the real work happens
 
-     ┌───────────────────┐            ┌───────────────────┐
-     │                   │            │                   │
-     │   AMANDA          │  ←─────→   │   STANLEY         │
-     │   SHALOM          │            │   VICTOR          │
-     │                   │            │                   │
-     │   React pages     │            │   Node server     │
-     │   Buttons, cards  │            │   SQLite database │
-     │   Colours, layout │            │   The AI thinking │
-     │                   │            │                   │
-     └───────────────────┘            └───────────────────┘
+     +-------------------+            +-------------------+
+     |                   |            |                   |
+     |   AMANDA          |  <----->   |   STANLEY         |
+     |   SHALOM          |            |   VICTOR          |
+     |                   |            |                   |
+     |   React pages     |            |   Node server     |
+     |   Buttons, cards  |            |   SQLite database |
+     |   Colours, layout |            |   The AI thinking |
+     |                   |            |                   |
+     +-------------------+            +-------------------+
               FRONTEND                        BACKEND
 
               The waiter between them is one file: api.js
 ```
 
-Two teams of two. **The frontend team makes it look right. The backend
-team makes it think.** Neither works without the other, and they meet at
-exactly one place — `frontend/src/api/api.js`.
+Two teams of two. The frontend team makes it look right. The backend team
+makes it think. Neither works without the other, and they meet at exactly
+one place, `frontend/src/api/api.js`.
 
 ---
 
-## The one rule that saves us
+## Start here: every file is empty
 
-**Open any file. Line 1 tells you who owns it.**
+Every folder and every file in this project already exists. The code files
+are **empty on purpose**. Each one has a single comment on line 1 saying
+what it is for and who builds it.
 
 ```js
 // Smart gallery with filters (Features 3 and 8) - Owner: AMANDA
 ```
 
-If that is not your name, **do not touch it.** Ask the owner in the group
+If that is not your name, **do not touch it**. Ask the owner in the group
 chat instead.
 
 Four beginners editing the same file is how teams lose a week of work the
@@ -49,273 +51,349 @@ night before submission. This rule costs nothing and prevents all of it.
 
 ---
 
-# 🎨 FRONTEND TEAM
+## How the frontend is split
 
-## AMANDA — The Screens
+The frontend is split **by feature, not by layer**. That means each person
+builds her own pages **and** the small pieces those pages use.
 
-> **Your mission:** every screen a visitor actually looks at.
-> When the examiner clicks through the site, they are clicking through
-> your work.
+We did it this way on purpose. If one person owned every component and the
+other owned every page, they would have to agree on the name of every prop
+before either could finish anything. Splitting by feature means each person
+controls both sides of her own work and can change her mind without asking.
 
-**You own 17 files**
+---
 
-| Folder | What is in it |
-|--------|---------------|
-| `frontend/src/pages/` | All 12 screens — Home, Gallery, Painting Details, Upload, Chatbot, Favourites, Dashboard, Analytics, Login, Register, AdminBuildAI, NotFound |
-| `frontend/src/ai/` | The 3 TensorFlow.js files — this is the AI that runs **in the browser** |
-| `frontend/src/App.jsx` | The map of which web address shows which page |
-| `frontend/src/main.jsx` | The switch that turns React on |
+# FRONTEND TEAM
 
-**Three are already built for you** — Home, Gallery and PaintingDetails.
-Open them, see the pattern, copy it. You are never starting from a blank page.
+## AMANDA - Gallery and the AI
 
-**Your order of work**
+> **Your mission:** the browsing side of the site, and the AI that runs in
+> the browser. When the examiner uploads a photo and the site recognises it,
+> that is your work.
 
-1. `Login.jsx` and `Register.jsx` — copy the form pattern from `SearchBar.jsx`
-2. `Favourites.jsx` — it is Gallery with one filter removed
-3. `NotFound.jsx` — about 6 lines using `EmptyState`
-4. `Dashboard.jsx` and `Analytics.jsx`
-5. `loadModel.js` → `embedding.js` → `AdminBuildAI.jsx` — **the big one**
-6. `Upload.jsx` and `Chatbot.jsx` — these need your AI files working first
+**You own 18 files.**
 
-**You must be able to explain**
+### Do these two first
+
+| File | Why first |
+|------|-----------|
+| `main.jsx` | Turns React on. Nothing renders until this exists |
+| `App.jsx` | The list of which web address shows which page |
+
+Nobody on the team can see their own work until these two are written, so
+please do them on day one.
+
+### Your pages (5)
+
+| File | What it shows |
+|------|---------------|
+| `pages/Home.jsx` | Welcome banner, the six categories, a trending strip |
+| `pages/Gallery.jsx` | All paintings in a grid, with filters and the search bar |
+| `pages/PaintingDetails.jsx` | One painting in full, with similar paintings |
+| `pages/Upload.jsx` | Choose a photo, run the AI, show what it found |
+| `pages/AdminBuildAI.jsx` | Admin only. Measures every painting once |
+
+### Your components (8)
+
+`PaintingCard` `PaintingGrid` `TestimonialCard` `SearchBar`
+`CategoryFilter` `MediumFilter` `ColourSwatch` `SimilarPaintings`
+
+These are the pieces your own pages use, so you decide what information
+each one takes in.
+
+### Your AI files (3)
+
+| File | What it does |
+|------|--------------|
+| `ai/loadModel.js` | Loads MobileNet once and keeps it in memory |
+| `ai/embedding.js` | Turns a picture into 1024 numbers |
+| `ai/knn.js` | Guesses a category from the closest matches |
+
+### Your order of work
+
+1. `main.jsx` then `App.jsx`, so the site runs
+2. `PaintingCard` and `PaintingGrid`, the two pieces everyone else waits on
+3. `Home.jsx` and `Gallery.jsx`, plus the filter and search pieces
+4. `PaintingDetails.jsx` with `ColourSwatch` and `SimilarPaintings`
+5. `loadModel.js`, then `embedding.js`, then `knn.js`
+6. `AdminBuildAI.jsx`, then `Upload.jsx`, which needs the AI files finished
+
+### You must be able to explain
+
 - What React Router does, and how `/painting/:id` hands the id to the page
-- `useState` vs `useEffect` — which runs when
-- Why `mobilenet.infer(img, true)` gives you 1024 numbers instead of a label
+- The difference between `useState` and `useEffect`, and when each runs
+- Why `mobilenet.infer(img, true)` gives 1024 numbers instead of a label
 - Why the AI runs in the browser and not on the server
+- Why the numbers are worked out once and saved, instead of every visit
 
 ---
 
-## SHALOM — The Look
+## SHALOM - The look, accounts and chat
 
-> **Your mission:** the reusable pieces and the design. Every colour on
-> this website is a decision you made.
+> **Your mission:** how the whole site looks, plus the account pages and the
+> chatbot. Every colour on this website is a decision you made.
 
-**You own 20 files**
+**You own 18 files.**
 
-| Folder | What is in it |
-|--------|---------------|
-| `frontend/src/components/` | All 15 reusable pieces — NavBar, PaintingCard, SearchBar, ChatWindow and the rest |
-| `frontend/src/styles/app.css` | **Every colour, font and size on the site** |
-| `frontend/src/api/api.js` | The waiter. Every single call to the backend |
-| `frontend/src/context/UserContext.jsx` | Remembers who is logged in |
-| `frontend/src/data/artworks.js` | The sample paintings, until the backend is ready |
-| `frontend/vite.config.js` | The proxy that lets the site talk to the server |
+### Do these three first
 
-**All of this is already built.** Your job is to keep it consistent as the
-site grows, and to be able to defend it.
+| File | Why first |
+|------|-----------|
+| `styles/app.css` | Every colour, font and size. Until this exists the site is plain black text |
+| `components/NavBar.jsx` | The top menu, on every single page |
+| `components/Footer.jsx` | The bottom of every page |
 
-Here is why your job matters most for how the project *looks*: because
-every colour lives in your `app.css`, and every painting box is your
-`PaintingCard`, **Amanda physically cannot make a page look wrong.**
-She has no colours to choose. You removed that risk for the whole team.
+Amanda's `App.jsx` puts the menu bar and footer around every page, so the
+whole team is waiting on these three.
 
-**Your order of work**
+### The plumbing (3)
 
-1. Read `app.css` top to bottom — the `:root` block at the top holds all 10 colours
-2. Read `api.js` — every backend address in the project is in that one file
-3. As Amanda builds pages, add any new component she needs
-4. Check every page on a phone before Checkpoint 1
+| File | What it does |
+|------|--------------|
+| `api/api.js` | Every call to the backend, in one place |
+| `context/UserContext.jsx` | Remembers who is logged in, for the whole site |
+| `data/artworks.js` | Sample paintings, used until the backend is ready |
 
-**You must be able to explain**
-- What props are — use `PaintingCard`, it is 16 lines
-- Why every backend call goes through `api.js` instead of being scattered around
-- What the `:root` block does and why colours live in one place
-- Why the interface is almost colourless *(because the paintings should be
-  the only strong colour — real galleries like Tate do exactly this)*
-- How `ProtectedRoute` sends a logged-out visitor to the login page
+### Your pages (7)
+
+| File | What it shows |
+|------|---------------|
+| `pages/Login.jsx` | The login form |
+| `pages/Register.jsx` | The create account form |
+| `pages/Favourites.jsx` | Paintings the user saved |
+| `pages/Dashboard.jsx` | Recently viewed, favourite categories, suggestions |
+| `pages/Analytics.jsx` | Most viewed paintings and a simple bar chart |
+| `pages/Chatbot.jsx` | The chat screen |
+| `pages/NotFound.jsx` | Shown when the web address does not exist |
+
+### Your components (7)
+
+`ChatWindow` `ChatMessage` `LoadingSpinner` `EmptyState`
+`ProtectedRoute` (plus `NavBar` and `Footer` from above)
+
+### Your order of work
+
+1. `app.css`, starting with the `:root` block that holds all the colours
+2. `NavBar` and `Footer`, so every page has a frame
+3. `api.js`, `UserContext.jsx` and `artworks.js`
+4. `Login.jsx` and `Register.jsx`, then `ProtectedRoute`
+5. `Favourites.jsx` and `Dashboard.jsx`
+6. `Analytics.jsx`, then `Chatbot.jsx` with `ChatWindow` and `ChatMessage`
+7. `NotFound.jsx`, the smallest file in the project
+
+### You must be able to explain
+
+- What props are, using `ChatMessage` as the example
+- Why every backend call goes through `api.js` instead of being scattered
+- What the `:root` block does and why the colours live in one place
+- Why the interface is almost colourless, because the paintings should be
+  the only strong colour, which is what real galleries do
+- How `ProtectedRoute` sends a logged out visitor to the login page
 
 ---
 
-# ⚙️ BACKEND TEAM
+# BACKEND TEAM
 
-## STANLEY — The Foundation *(Team Leader)*
+## STANLEY - The foundation *(team leader)*
 
-> **Your mission:** the server and the database. **You go first.**
-> Until your part works, nobody can test anything against real data.
+> **Your mission:** the server and the database. You go first. Until your
+> part works, nobody can test anything against real data.
 
-**You own 10 files**
+**You own 10 files.**
 
 | File | What it does |
 |------|--------------|
 | `backend/server.js` | Starts everything. The file that runs |
 | `backend/config.js` | Every setting in one place |
-| `backend/database/schema.sql` | The 9 tables |
-| `backend/database/db.js` | Opens the database. Three tiny helpers |
-| `backend/database/seed.js` | Creates the tables and adds ~30 paintings |
+| `backend/database/schema.sql` | The nine tables |
+| `backend/database/db.js` | Opens the database. Three small helpers |
+| `backend/database/seed.js` | Creates the tables and adds about 30 paintings |
 | `backend/routes/auth.js` | Register, login, logout |
 | `backend/routes/paintings.js` | The gallery list and one painting |
 | `backend/routes/favourites.js` | Save and remove favourites |
 | `backend/routes/dashboard.js` | Recently viewed and suggestions |
 | `backend/routes/analytics.js` | Most viewed paintings |
 
-**Your order of work**
+### Your order of work
 
-1. `config.js` — settings
-2. `schema.sql` — copy the SQL straight from `04_DATABASE_DESIGN.md`
-3. `db.js` — three small functions, nothing clever
-4. `seed.js` — then run `npm run seed` and watch the database appear
-5. `server.js` — connect the route files
-6. `routes/paintings.js` — **this unblocks Amanda and Shalom**
-7. `routes/auth.js`, then favourites, dashboard, analytics
+1. `config.js`
+2. `schema.sql`, copying the SQL straight from `04_DATABASE_DESIGN.md`
+3. `db.js`, three small functions, nothing clever
+4. `seed.js`, then run `npm run seed` and watch the database appear
+5. `server.js`, connecting the route files
+6. `routes/paintings.js`, which unblocks Amanda and Shalom
+7. `auth.js`, then favourites, dashboard, analytics
 
-**You must be able to explain**
-- Why SQLite instead of MySQL — *it is built into Node 24, nothing to install*
+### You must be able to explain
+
+- Why SQLite instead of MySQL, because it is built into Node and needs
+  no installing
 - What a `?` placeholder is and how it stops SQL injection
-- Why passwords are hashed with bcryptjs and never stored as text
-- What a JOIN does — use the paintings + categories query
+- Why passwords are hashed with bcryptjs and never stored as plain text
+- What a JOIN does, using the paintings and categories query
 - How a session cookie keeps someone logged in
 
 ---
 
-## VICTOR — The Brain & The Paperwork
+## VICTOR - The brain and the paperwork
 
 > **Your mission:** the AI thinking on the server, and every document the
 > college receives. Half the marks live in your half.
 
-**You own 10 code files plus all documentation**
+**You own 10 code files plus all documentation.**
 
-| Folder | What is in it |
-|--------|---------------|
-| `backend/ai/` | 6 files — similarity, recommend, chatbot, smartSearch, summary, tags |
+| File | What it does |
+|------|--------------|
+| `backend/ai/similarity.js` | Cosine similarity between two lists of numbers |
+| `backend/ai/recommend.js` | Similar and trending paintings |
+| `backend/ai/chatbot.js` | Works out what the user typed |
+| `backend/ai/smartSearch.js` | Turns an English sentence into filters |
+| `backend/ai/summary.js` | Writes the AI summary sentence |
+| `backend/ai/tags.js` | The tags shown on gallery cards |
 | `backend/routes/search.js` | Smart search (Feature 5) |
-| `backend/routes/chatbot.js` | The chatbot (Feature 2) |
+| `backend/routes/chatbot.js` | Chatbot messages (Feature 2) |
 | `backend/routes/recognise.js` | Image recognition (Feature 4) |
 | `backend/routes/export.js` | PDF and Word download (Feature 6) |
-| `documentation/` | **All 10 documents, screenshots, the video, both progress reports** |
+| `documentation/` | All the documents, screenshots, video, both progress reports |
 
-**Your order of work**
+### Your order of work
 
-1. `similarity.js` — cosine similarity, about 10 lines. **Do this first**, three files need it
-2. `recommend.js` — similar and trending paintings
-3. `routes/recognise.js` — receives the 1024 numbers from Amanda's browser code
+1. `similarity.js` first. It is about 10 lines and three other files need it
+2. `recommend.js`
+3. `routes/recognise.js`, which receives the 1024 numbers from the browser
 4. `chatbot.js` and `smartSearch.js`
 5. `summary.js` and `tags.js`
-6. `routes/export.js` — PDF and Word
+6. `routes/export.js`
 7. Documentation, all the way through
 
-**You must be able to explain**
-- **Everything in `09_AI_EXPLAINED.md`. Read it twice before you write a line.**
-- The cosine similarity formula, and why we compare angle and not distance
-- k-nearest-neighbour with k = 5
-- That the chatbot is rule-based — and why that was the right choice
-- **What the AI honestly cannot do** — the table at the end of `09_AI_EXPLAINED.md`
+### You must be able to explain
 
-> The examiner will push hardest here. Saying *"it is better at texture than
-> at artistic style, because MobileNet was trained on photographs"* earns more
-> marks than pretending it is perfect.
+- Everything in `09_AI_EXPLAINED.md`. Read it twice before writing a line
+- The cosine similarity formula, and why we compare angle and not distance
+- k nearest neighbour with k set to 5
+- That the chatbot is rule based, and why that was the right choice here
+- What the AI honestly cannot do
+
+> The examiner will push hardest here. Saying that it is better at texture
+> than at artistic style, because MobileNet was trained on photographs,
+> earns more marks than pretending it is perfect.
 
 ---
 
 ## Where the two teams meet
 
-Only one file connects them, and knowing this answers half the viva questions:
+Only one file connects them, and knowing this answers half the viva questions.
 
 ```
   AMANDA's page          SHALOM's api.js         STANLEY / VICTOR's routes
-  ─────────────          ───────────────         ─────────────────────────
-  Gallery.jsx    ──→     getPaintings()   ──→    GET /api/paintings
-                                                         │
-                                                         ▼
+  -------------          ---------------         -------------------------
+  Gallery.jsx    -->     getPaintings()   -->    GET /api/paintings
+                                                         |
+                                                         v
                                                   STANLEY's db.js
-                                                         │
-                                                         ▼
+                                                         |
+                                                         v
                                                    artmind.db
 ```
 
-**If a feature is broken, walk that chain.** Whichever link is missing tells
+If a feature is broken, walk that chain. Whichever link is missing tells
 you whose file it is.
 
 ---
 
-## Git — how we work without stepping on each other
+## Git, how we work without stepping on each other
 
 ### Once, on your laptop
 
+Set your name first, using the email on your GitHub account. If you skip
+this, your work will not be credited to you.
+
 ```
-git clone <the repo address Stanley sends you>
+git config --global user.name "Your Name"
+git config --global user.email "your-github-email@gmail.com"
+```
+
+Then get the project and move onto your own branch.
+
+```
+git clone https://github.com/Stanley-developer/ArtMind.git
 cd ArtMind
+git checkout your-name
 cd frontend
 npm install
 ```
 
-### Every time you start work
+### Four branches are already waiting
 
-A **branch** is your own private copy. You cannot break anyone else's work.
+`amanda` `shalom` `stanley` `victor`
 
-```
-git checkout main
-git pull
-git checkout -b amanda-login
-```
+Your branch is your first name in lowercase. Work on yours and nobody can
+break your files.
 
-### When you have finished something
+### Every time you finish something
 
 ```
+git checkout your-name
+git pull origin main
 git add .
 git commit -m "Built the login page"
-git push -u origin amanda-login
+git push origin your-name
 ```
 
-Then open GitHub, click **Pull request**, and **Stanley reviews and merges it.**
+Keep the commit message to one short line.
 
-**Nothing reaches `main` until Stanley approves it.** That is the whole safety net.
+### Getting your work into main
 
-### Branch names
+Open the repo on GitHub. You will see a green **Compare and pull request**
+button. Click it, say what you did, and create it.
 
-`yourname-whatyoudid` — for example `amanda-login`, `shalom-navbar`,
-`victor-similarity`, `stanley-database`
-
-### Four branches are already waiting for you
-
-`amanda` · `shalom` · `stanley` · `victor`
-
-Start from yours, or make a new one per task using the naming above.
+**One teammate has to approve it before it merges.** Nobody can push
+straight to `main`, including Stanley. That is deliberate. It means two
+people have seen every line we submit.
 
 ---
 
 ## The two deadlines that matter
 
-### ✅ Checkpoint 1 — day 7 to 10
+### Checkpoint 1, day 7 to 10
 
-**Must be working and screenshotted:**
+- [ ] `main.jsx` and `App.jsx` written, the site runs - *Amanda*
+- [ ] `app.css`, NavBar and Footer, the site has a look - *Shalom*
+- [ ] Home page and Gallery showing paintings - *Amanda*
+- [ ] Login and Register working - *Shalom*
+- [ ] Database created, `npm run seed` fills it - *Stanley*
+- [ ] `/api/paintings` returning real data - *Stanley*
 
-- [ ] Database created, `npm run seed` fills it — *Stanley*
-- [ ] `/api/paintings` returns real data — *Stanley*
-- [ ] Homepage loads — *already done*
-- [ ] Gallery shows paintings with working filters — *already done*
-- [ ] Login and Register work — *Amanda + Stanley*
+Send a ZIP of the code so far, plus screenshots.
+Victor prepares it. Stanley sends it.
 
-Send: a ZIP of the code so far, plus screenshots, via the Query/Status section.
-**Victor prepares it. Stanley sends it.**
+### Checkpoint 2, seven to ten days later
 
-### ✅ Checkpoint 2 — 7 to 10 days later
-
-- [ ] Similar paintings showing on the details page — *Victor*
-- [ ] Image upload and recognition working — *Amanda + Victor*
-- [ ] Chatbot answering — *Victor*
-- [ ] Smart search understanding sentences — *Victor*
-- [ ] Dashboard and Analytics — *Amanda + Stanley*
-- [ ] PDF and Word download — *Victor*
+- [ ] Similar paintings on the details page - *Victor*
+- [ ] Image upload and recognition working - *Amanda and Victor*
+- [ ] Chatbot answering - *Shalom and Victor*
+- [ ] Smart search understanding sentences - *Victor*
+- [ ] Dashboard and Analytics - *Shalom and Stanley*
+- [ ] PDF and Word download - *Victor*
 
 ### Final week
 
 | Task | Who |
 |------|-----|
-| Test everything on a **different** laptop | All |
+| Test everything on a different laptop | All |
 | Record the demo video | Victor |
 | Draw the flowchart, DFD and ER diagram | Victor |
 | Save the MobileNet files so the AI works offline | Amanda |
-| **Delete both `node_modules` folders**, then ZIP | Stanley |
+| Delete both `node_modules` folders, then ZIP | Stanley |
 | Fill the Status Report and Feedback Form | Stanley |
 
-> ⚠️ **The final ZIP can only be submitted once.** Check everything twice.
+> The final ZIP can only be submitted once. Check everything twice.
 
 ---
 
 ## If you get stuck
 
-Message the group **after 30 minutes**, not after three days.
+Message the group after 30 minutes, not after three days.
 
 A blocked teammate on day 3 is normal. A blocked teammate on day 19 is a
 problem for all four of us.
