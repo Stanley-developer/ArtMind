@@ -1,5 +1,4 @@
 // Smart gallery with filters (Features 3 and 8) - Owner: AMANDA
-// Smart gallery with filters (Features 3 and 8) - Owner: AMANDA
 
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
@@ -8,18 +7,13 @@ import MediumFilter from "../components/MediumFilter";
 import PaintingGrid from "../components/PaintingGrid";
 import { artworks, categories, mediums } from "../data/artworks";
 
-// The filter buttons only need the names, not the pictures
 const categoryNames = categories.map((item) => item.name);
 
 function Gallery() {
-  // Three pieces of state, one for each thing the visitor can change
   const [category, setCategory] = useState("");
   const [medium, setMedium] = useState("");
   const [searchText, setSearchText] = useState("");
 
-  // Work out which paintings to show. When the backend is connected this
-  // whole block is replaced by one getPaintings() call, because the server
-  // will do the filtering for us.
   let shown = artworks;
 
   if (category !== "") {

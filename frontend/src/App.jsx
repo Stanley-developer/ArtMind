@@ -1,5 +1,4 @@
 // All the page addresses of the website - Owner: AMANDA
-// All the page addresses of the website - Owner: AMANDA
 
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -18,8 +17,6 @@ import Analytics from "./pages/Analytics";
 import AdminBuildAI from "./pages/AdminBuildAI";
 import NotFound from "./pages/NotFound";
 
-// Every page sits between the menu bar and the footer, so we write those
-// two once here instead of repeating them inside every page
 function App() {
   return (
     <div className="page-wrapper">
@@ -30,8 +27,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Gallery />} />
 
-          {/* The colon means anything can go there. Opening /painting/5
-              gives the page an id of 5. */}
           <Route path="/painting/:id" element={<PaintingDetails />} />
 
           <Route path="/login" element={<Login />} />
@@ -39,10 +34,6 @@ function App() {
           <Route path="/upload" element={<Upload />} />
           <Route path="/chatbot" element={<Chatbot />} />
           <Route path="/analytics" element={<Analytics />} />
-
-          {/* These three pages only make sense for someone who is logged in,
-              so ProtectedRoute goes around them. It checks the login first
-              and sends a visitor to /login when there is nobody signed in. */}
           <Route
             path="/favourites"
             element={
@@ -68,9 +59,6 @@ function App() {
             }
           />
 
-          {/* The star matches any address we have not listed above, so a
-              wrong link shows our own not found page instead of a blank
-              screen. It must stay last. */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
