@@ -1,1 +1,1600 @@
 /* Our own styles, on top of Bootstrap - Owner: SHALOM */
+
+/* Every colour used on the site is kept here in one place. If we ever want to
+   change the teal, we change it once here instead of hunting through the file. */
+:root {
+  --cream: #FAF9F7;
+  --soft: #F2F0EC;
+  --ink: #1A1A1A;
+  --grey: #6B6B6B;
+  --line: #E5E3DF;
+  --teal: #0F4C5C;
+  --teal-dark: #0A3642;
+  --dark: #141414;
+  --dark-line: #2C2C2C;
+  --dark-text: #B8B4AD;
+}
+
+
+/* The base look of the whole page. The interface stays quiet and almost
+   colourless on purpose, so the paintings are the only strong colour. */
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+
+/* Every heading uses the serif font. This is what gives the site its
+   gallery feeling instead of looking like an ordinary web app. */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--ink);
+}
+
+
+/* This keeps the footer at the bottom even when a page has very little
+   content on it */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-wrapper main {
+  flex: 1;
+}
+
+/* =========================================================
+   ART MIND NAVBAR
+   ========================================================= */
+
+.site-nav {
+  width: 100%;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Main desktop navbar */
+
+.nav-container {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 78px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  color: var(--ink);
+  text-decoration: none;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+.brand:hover {
+  color: var(--ink);
+}
+
+.brand-mark {
+  width: 13px;
+  height: 13px;
+
+  display: block;
+
+  background: var(--teal);
+}
+
+/* Desktop navigation */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  position: relative;
+
+  color: var(--ink);
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  padding: 8px 0;
+
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--teal);
+}
+
+.nav-link.active {
+  color: var(--teal);
+}
+
+.nav-link.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: var(--teal);
+}
+
+/* Desktop user area */
+
+.desktop-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-name {
+  color: var(--ink);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  padding: 9px 14px;
+
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 999px;
+}
+
+.sign-in-btn,
+.sign-out-btn {
+  min-height: 42px;
+
+  padding: 10px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: var(--teal);
+  border: 1px solid var(--teal);
+
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.sign-in-btn:hover,
+.sign-out-btn:hover {
+  background: var(--teal-dark);
+  border-color: var(--teal-dark);
+  color: #fff;
+}
+
+/* Hamburger */
+
+.nav-toggle {
+  display: none;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 0;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+
+  width: 20px;
+  height: 2px;
+
+  margin: 4px auto;
+
+  background: var(--ink);
+}
+
+
+/* =========================================================
+   MOBILE FULL-SCREEN MENU
+   ========================================================= */
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .nav-container {
+    width: calc(100% - 32px);
+    min-height: 72px;
+  }
+
+  .brand {
+    font-size: 28px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+
+  /* Full-screen menu */
+
+  .mobile-menu {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--cream);
+
+    padding: 0 32px 32px;
+
+    z-index: 9999;
+
+    transform: translateX(100%);
+
+    transition: transform 0.35s ease;
+
+    overflow-y: auto;
+  }
+
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+
+
+  /* Menu top */
+
+  .mobile-menu-header {
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+
+  /* Close button */
+
+  .mobile-close {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--ink);
+
+    font-family: Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 200;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* Links */
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 42px;
+  }
+
+  .mobile-link {
+    padding: 18px 0;
+
+    color: var(--ink);
+    text-decoration: none;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+  }
+
+  .mobile-link:hover,
+  .mobile-link.active {
+    color: var(--teal);
+  }
+
+
+  /* Push user controls to bottom */
+
+  .mobile-user {
+    margin-top: auto;
+
+    padding-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mobile-username {
+    color: var(--grey);
+
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .mobile-signout,
+  .mobile-signin {
+    width: 100%;
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: var(--teal);
+    border: 1px solid var(--teal);
+
+    color: #fff;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mobile-signout:hover,
+  .mobile-signin:hover {
+    background: var(--teal-dark);
+    color: #fff;
+  }
+}
+
+/* Buttons. The dark green is the only strong colour in the interface, so we
+   keep it for the one action we want people to take on each page. */
+.btn-teal {
+  background-color: var(--teal);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn-teal:hover {
+  background-color: var(--teal-dark);
+  color: #FFFFFF;
+}
+
+.btn-outline-plain {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.btn-outline-plain:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* A white outlined button, for use on top of a painting or a dark band */
+.btn-light-plain {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+.btn-light-plain:hover {
+  background-color: #FFFFFF;
+  color: var(--ink);
+}
+
+
+/* Headings and the small label that sits above them */
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 10px;
+}
+
+.eyebrow-light {
+  color: var(--dark-text);
+}
+
+.page-title {
+  font-size: 48px;
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-size: 42px;
+  margin-bottom: 0;
+}
+
+.small-heading {
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 12px;
+}
+
+
+/* A band is one horizontal stripe of the page. Giving them all the same
+   padding is what keeps the page rhythm even from top to bottom. */
+.band {
+  padding: 80px 0;
+}
+
+.band-tight {
+  padding: 50px 0;
+}
+
+.band-soft {
+  background-color: var(--soft);
+  padding: 80px 0;
+}
+
+.band-head {
+  margin-bottom: 40px;
+}
+
+.band-head-centre {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.band-lead {
+  color: var(--grey);
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+
+/* The dark stripe. Putting paintings on near black makes their colours look
+   stronger, which is the same trick real galleries use on their walls. */
+.band-dark {
+  background-color: var(--dark);
+  padding: 80px 0;
+}
+
+.band-dark .section-title,
+.band-dark .painting-title {
+  color: #FFFFFF;
+}
+
+.band-dark .band-lead,
+.band-dark .painting-artist {
+  color: var(--dark-text);
+}
+
+.band-dark .painting-card {
+  background-color: #1C1C1C;
+  border-color: var(--dark-line);
+}
+
+.band-dark .painting-card:hover {
+  border-color: #FFFFFF;
+}
+
+
+/* The big section at the top of the home page. The headline sits top left,
+   a small dark card sits top right, and a wide photo of a gallery room runs
+   underneath them, filling the width of the container. */
+.hero {
+  padding: 56px 0 40px 0;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* Uppercase serif with tight line spacing is what gives the headline its
+   poster feeling. The br in the markup forces the two lines. */
+.hero-headline {
+  font-size: 88px;
+  line-height: 0.95;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* The small dark card next to the headline */
+.hero-mini-card {
+  width: 240px;
+  flex-shrink: 0;
+  background-color: var(--dark);
+  padding: 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.hero-mini-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hero-mini-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dark-text);
+  margin-bottom: 4px;
+}
+
+.hero-mini-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.hero-mini-link {
+  font-size: 13px;
+  color: #FFFFFF;
+  margin-bottom: 0;
+}
+
+.hero-mini-card:hover .hero-mini-link {
+  text-decoration: underline;
+}
+
+/* The gallery wall under the headline. Five separate paintings sit in a row
+   with only a hairline gap between them, so the row looks like one long band
+   while every painting stays its own picture you can click. */
+.hero-wall {
+  display: flex;
+  gap: 3px;
+  height: 460px;
+  margin-top: 36px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* flex-basis 0 with flex-grow means the widths are shared out using the
+   number each painting was given, instead of their real picture sizes.
+   That is how we get a wide one, then a narrow one, then a wide one. */
+.hero-wall-item {
+  position: relative;
+  flex-basis: 0;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+/* object-fit cover crops each painting to fill its slot, so the tops and
+   bottoms of the row stay in a straight line whatever shape the original
+   picture was */
+.hero-wall-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.hero-wall-item:hover img {
+  transform: scale(1.04);
+}
+
+/* The name of the painting slides up from the bottom when you point at it.
+   It starts below the edge and moves to zero on hover. */
+.hero-wall-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 1.4;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+
+.hero-wall-item:hover .hero-wall-caption {
+  transform: translateY(0);
+}
+
+.hero-wall-caption em {
+  display: block;
+  font-style: normal;
+  font-size: 12px;
+  color: #D6D2CB;
+  margin-top: 2px;
+}
+
+/* The button and the small note below the wall */
+.hero-wall-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hero-wall-note {
+  color: var(--grey);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* A white framed box for a painting, used on the details page */
+.hero-frame {
+  background-color: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 12px;
+}
+
+.hero-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* The small line naming the painting and the artist under an image */
+.image-credit {
+  color: var(--grey);
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+
+/* A thin line used to separate the sections of the page */
+.section-divider {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+
+/* The six category boxes. Every box is the same size and holds exactly one
+   picture, which is what keeps the row looking tidy. */
+.category-tile {
+  display: block;
+  background-color: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.category-tile:hover {
+  border-color: var(--teal);
+}
+
+/* A fixed height plus object-fit crops every picture to the same shape,
+   even when the original images are different sizes */
+.category-tile img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+}
+
+.category-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--ink);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+
+/* One painting box, used on the home page, the gallery and the chat */
+.painting-card {
+  display: block;
+  background-color: #FFFFFF;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  height: 100%;
+}
+
+.painting-card:hover {
+  border-color: var(--teal);
+}
+
+.painting-image {
+  height: 230px;
+  overflow: hidden;
+}
+
+/* The three featured works on the home page get extra height so they feel
+   more important than the rest */
+.painting-image-tall {
+  height: 380px;
+}
+
+.painting-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.painting-card-body {
+  padding: 18px;
+}
+
+.painting-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.painting-artist {
+  color: var(--grey);
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.similarity-score {
+  color: var(--grey);
+  font-size: 13px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+
+/* The two wide cards with a painting behind the words. The dark overlay is
+   what keeps the white text readable no matter which painting is behind it. */
+.promo-card {
+  position: relative;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.promo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* position relative lifts the words above the dark overlay */
+.promo-inner {
+  position: relative;
+  padding: 34px;
+}
+
+.promo-title {
+  color: #FFFFFF;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.promo-text {
+  color: #E8E5E0;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+/* The row of four things we offer */
+.service-icon {
+  width: 52px;
+  height: 52px;
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 1.5;
+  margin-bottom: 18px;
+}
+
+.service-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.service-text {
+  color: var(--grey);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+
+/* Customer reviews */
+.testimonial-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 30px;
+  height: 100%;
+}
+
+.stars {
+  margin-bottom: 16px;
+}
+
+.star {
+  color: var(--line);
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+.star-on {
+  color: #C9922B;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.testimonial-name {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.testimonial-role {
+  color: var(--grey);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+
+/* The filter buttons on the gallery page */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-pill {
+  background-color: transparent;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.filter-pill:hover {
+  border-color: var(--teal);
+}
+
+/* The chosen filter is filled in, so it is obvious which one is active */
+.filter-pill-active {
+  background-color: var(--teal);
+  border-color: var(--teal);
+  color: #FFFFFF;
+}
+
+.medium-select {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: var(--ink);
+  background-color: #FFFFFF;
+}
+
+.clear-link {
+  background: none;
+  border: none;
+  color: var(--teal);
+  font-size: 15px;
+  margin-left: 16px;
+  text-decoration: underline;
+}
+
+.result-count {
+  color: var(--grey);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+
+/* The search box */
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  border-color: var(--teal);
+  box-shadow: none;
+}
+
+
+/* The painting details page */
+.detail-title {
+  font-size: 44px;
+  margin-bottom: 6px;
+}
+
+.detail-artist {
+  color: var(--grey);
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.detail-facts {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-bottom: 28px;
+}
+
+.detail-facts p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* The label part of each fact line, set to a fixed width so all the
+   values line up down the page */
+.detail-facts span {
+  display: inline-block;
+  width: 110px;
+  color: var(--grey);
+}
+
+.detail-description {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.ai-summary-box {
+  background-color: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 20px;
+  margin-bottom: 28px;
+}
+
+.ai-summary-box p {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.detail-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+/* The colour squares found by our AI code */
+.colour-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.colour-swatch {
+  text-align: center;
+}
+
+.colour-swatch-box {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--line);
+}
+
+.colour-swatch-name {
+  font-size: 12px;
+  color: var(--ink);
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.colour-swatch-percent {
+  font-size: 12px;
+  color: var(--grey);
+  margin-bottom: 0;
+}
+
+
+/* The chat page */
+.chat-window {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border: 1px solid var(--line);
+  padding: 24px;
+}
+
+/* A fixed height with scrolling keeps the input box in the same place no
+   matter how long the conversation gets */
+.chat-messages {
+  height: 420px;
+  overflow-y: auto;
+  margin-bottom: 18px;
+}
+
+.chat-row {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+/* The user's own messages are pushed over to the right hand side */
+.chat-row-user {
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  background-color: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.chat-bubble-user {
+  background-color: var(--soft);
+  border-color: var(--soft);
+}
+
+.chat-text {
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.chat-waiting {
+  color: var(--grey);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.suggestion-chip {
+  background-color: transparent;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-size: 14px;
+  color: var(--grey);
+}
+
+.suggestion-chip:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+.chat-input:focus {
+  border-color: var(--teal);
+  box-shadow: none;
+}
+
+
+/* Shown while waiting, and when a list comes back empty */
+.loading-text {
+  color: var(--grey);
+  font-size: 15px;
+  margin-top: 14px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px solid var(--line);
+  background-color: #FFFFFF;
+}
+
+.empty-state-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.empty-state-text {
+  color: var(--grey);
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+
+/* The bottom of every page. It is dark so the page ends on a firm line
+   instead of fading out. */
+.site-footer {
+  background-color: var(--dark);
+  padding: 70px 0 30px 0;
+  margin-top: 0;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 28px;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.footer-about {
+  color: var(--dark-text);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.footer-heading {
+  color: #FFFFFF;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* display block puts every footer link on its own line */
+.footer-link {
+  display: block;
+  color: var(--dark-text);
+  text-decoration: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-link:hover {
+  color: #FFFFFF;
+}
+
+.newsletter-row {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-input {
+  background-color: transparent;
+  border: 1px solid var(--dark-line);
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+.newsletter-input:focus {
+  background-color: transparent;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: none;
+}
+
+.newsletter-input::placeholder {
+  color: #7A766F;
+}
+
+.footer-thanks {
+  color: #FFFFFF;
+  font-size: 15px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--dark-line);
+  margin-top: 50px;
+  padding-top: 24px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: var(--dark-text);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.footer-credit {
+  font-size: 13px;
+}
+
+
+/* TABLET. Anything narrower than 992 pixels. Headings come down a step and
+   the bands lose some of their padding so less scrolling is needed. */
+@media (max-width: 991px) {
+  .hero-headline {
+    font-size: 58px;
+  }
+
+  .hero-wall {
+    height: 340px;
+  }
+
+  .hero-mini-card {
+    width: 210px;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+  .band,
+  .band-soft,
+  .band-dark {
+    padding: 56px 0;
+  }
+
+  .painting-image {
+    height: 200px;
+  }
+
+  .painting-image-tall {
+    height: 300px;
+  }
+
+  .promo-card {
+    height: 260px;
+  }
+
+  .nav-item-link {
+    margin-left: 20px;
+    font-size: 15px;
+  }
+}
+
+
+/* PHONE. Anything narrower than 768 pixels. The menu links wrap onto their
+   own line and every heading comes down again. */
+@media (max-width: 767px) {
+  .hero-headline {
+    font-size: 38px;
+  }
+
+  /* On a phone the dark card drops below the headline and turns into a
+     short wide strip with the picture on the left */
+  .hero-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-mini-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-mini-card img {
+    width: 90px;
+    height: 70px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  /* On a phone five paintings side by side would each be too thin to see.
+     Instead the wall slides sideways, and each painting keeps a sensible
+     width. The scroll-snap lines make it stop neatly on each one. */
+  .hero-wall {
+    height: 240px;
+    margin-top: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .hero-wall-item {
+    flex: 0 0 200px;
+    scroll-snap-align: start;
+  }
+
+  /* On a touch screen there is no hover, so the names stay visible */
+  .hero-wall-caption {
+    transform: translateY(0);
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .hero-wall-footer {
+    margin-top: 18px;
+  }
+
+  .hero-wall-note {
+    display: none;
+  }
+
+  .page-title,
+  .detail-title {
+    font-size: 30px;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+
+  .hero {
+    padding: 36px 0 24px 0;
+  }
+
+  .band,
+  .band-soft,
+  .band-dark {
+    padding: 40px 0;
+  }
+
+  .band-tight {
+    padding: 30px 0;
+  }
+
+  /* The menu bar becomes two rows, the brand on top and the links below */
+
+
+.nav-toggle {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--cream);
+
+    padding: 0 32px 32px;
+
+    z-index: 9999;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+  }
+
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-header {
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-close {
+    border: none;
+    background: transparent;
+
+    font-size: 42px;
+    color: var(--ink);
+
+    cursor: pointer;
+  }
+
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 35px;
+  }
+
+  .mobile-link {
+    padding: 18px 0;
+
+    color: var(--ink);
+    text-decoration: none;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 32px;
+  }
+
+  .mobile-link:hover,
+  .mobile-link.active {
+    color: var(--teal);
+  }
+
+  .mobile-user {
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mobile-username {
+    text-align: center;
+    color: var(--grey);
+  }
+
+  .mobile-signout,
+  .mobile-signin {
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--teal);
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+  }
+}
+
+.sign-in-btn,
+.sign-out-btn {
+  width: 100%;
+}
+
+  .painting-image {
+    height: 160px;
+  }
+
+  .painting-image-tall {
+    height: 240px;
+  }
+
+  .painting-title {
+    font-size: 17px;
+  }
+
+  .category-tile img {
+    height: 100px;
+  }
+
+  .promo-card {
+    height: 220px;
+  }
+
+  .promo-inner {
+    padding: 22px;
+  }
+
+  .promo-title {
+    font-size: 24px;
+  }
+
+  /* Buttons go full width on a phone so they are easy to tap */
+  .detail-buttons .btn {
+    width: 100%;
+  }
+
+  .chat-messages {
+    height: 320px;
+  }
+
+  .site-footer {
+    padding: 44px 0 24px 0;
+  }
+}
