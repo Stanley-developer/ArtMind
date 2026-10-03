@@ -1,7 +1,5 @@
 /* Our own styles, on top of Bootstrap - Owner: SHALOM */
 
-/* Every colour used on the site is kept here in one place. If we ever want to
-   change the teal, we change it once here instead of hunting through the file. */
 :root {
   --cream: #FAF9F7;
   --soft: #F2F0EC;
@@ -16,8 +14,6 @@
 }
 
 
-/* The base look of the whole page. The interface stays quiet and almost
-   colourless on purpose, so the paintings are the only strong colour. */
 body {
   background-color: var(--cream);
   color: var(--ink);
@@ -25,16 +21,12 @@ body {
 }
 
 
-/* Every heading uses the serif font. This is what gives the site its
-   gallery feeling instead of looking like an ordinary web app. */
 h1, h2, h3, h4 {
   font-family: 'Playfair Display', Georgia, serif;
   color: var(--ink);
 }
 
 
-/* This keeps the footer at the bottom even when a page has very little
-   content on it */
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -44,10 +36,6 @@ h1, h2, h3, h4 {
 .page-wrapper main {
   flex: 1;
 }
-
-/* =========================================================
-   ART MIND NAVBAR
-   ========================================================= */
 
 .site-nav {
   width: 100%;
@@ -232,18 +220,9 @@ h1, h2, h3, h4 {
 }
 
 
-/* =========================================================
-   MOBILE FULL-SCREEN MENU
-   ========================================================= */
-
 .mobile-menu {
   display: none;
 }
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
 @media (max-width: 768px) {
 
@@ -361,8 +340,6 @@ h1, h2, h3, h4 {
   }
 
 
-  /* Push user controls to bottom */
-
   .mobile-user {
     margin-top: auto;
 
@@ -411,9 +388,6 @@ h1, h2, h3, h4 {
   }
 }
 
-
-/* Buttons. The dark green is the only strong colour in the interface, so we
-   keep it for the one action we want people to take on each page. */
 .btn-teal {
   background-color: var(--teal);
   color: #FFFFFF;
@@ -443,7 +417,6 @@ h1, h2, h3, h4 {
   color: var(--teal);
 }
 
-/* A white outlined button, for use on top of a painting or a dark band */
 .btn-light-plain {
   background-color: transparent;
   color: #FFFFFF;
@@ -490,9 +463,6 @@ h1, h2, h3, h4 {
   margin-bottom: 12px;
 }
 
-
-/* A band is one horizontal stripe of the page. Giving them all the same
-   padding is what keeps the page rhythm even from top to bottom. */
 .band {
   padding: 80px 0;
 }
@@ -524,9 +494,6 @@ h1, h2, h3, h4 {
   margin-bottom: 0;
 }
 
-
-/* The dark stripe. Putting paintings on near black makes their colours look
-   stronger, which is the same trick real galleries use on their walls. */
 .band-dark {
   background-color: var(--dark);
   padding: 80px 0;
@@ -551,10 +518,6 @@ h1, h2, h3, h4 {
   border-color: #FFFFFF;
 }
 
-
-/* The big section at the top of the home page. The headline sits top left,
-   a small dark card sits top right, and a wide photo of a gallery room runs
-   underneath them, filling the width of the container. */
 .hero {
   padding: 56px 0 40px 0;
 }
@@ -566,8 +529,6 @@ h1, h2, h3, h4 {
   gap: 30px;
 }
 
-/* Uppercase serif with tight line spacing is what gives the headline its
-   poster feeling. The br in the markup forces the two lines. */
 .hero-headline {
   font-size: 88px;
   line-height: 0.95;
@@ -621,9 +582,6 @@ h1, h2, h3, h4 {
   text-decoration: underline;
 }
 
-/* The gallery wall under the headline. Five separate paintings sit in a row
-   with only a hairline gap between them, so the row looks like one long band
-   while every painting stays its own picture you can click. */
 .hero-wall {
   display: flex;
   gap: 3px;
@@ -633,9 +591,6 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
-/* flex-basis 0 with flex-grow means the widths are shared out using the
-   number each painting was given, instead of their real picture sizes.
-   That is how we get a wide one, then a narrow one, then a wide one. */
 .hero-wall-item {
   position: relative;
   flex-basis: 0;
@@ -644,9 +599,6 @@ h1, h2, h3, h4 {
   display: block;
 }
 
-/* object-fit cover crops each painting to fill its slot, so the tops and
-   bottoms of the row stay in a straight line whatever shape the original
-   picture was */
 .hero-wall-item img {
   width: 100%;
   height: 100%;
@@ -658,9 +610,6 @@ h1, h2, h3, h4 {
 .hero-wall-item:hover img {
   transform: scale(1.04);
 }
-
-/* The name of the painting slides up from the bottom when you point at it.
-   It starts below the edge and moves to zero on hover. */
 .hero-wall-caption {
   position: absolute;
   left: 0;
@@ -703,7 +652,6 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-/* A white framed box for a painting, used on the details page */
 .hero-frame {
   background-color: #FFFFFF;
   border: 1px solid var(--line);
@@ -716,7 +664,6 @@ h1, h2, h3, h4 {
   display: block;
 }
 
-/* The small line naming the painting and the artist under an image */
 .image-credit {
   color: var(--grey);
   font-size: 13px;
@@ -725,17 +672,12 @@ h1, h2, h3, h4 {
   text-align: center;
 }
 
-
-/* A thin line used to separate the sections of the page */
 .section-divider {
   border: 0;
   border-top: 1px solid var(--line);
   margin: 0;
 }
 
-
-/* The six category boxes. Every box is the same size and holds exactly one
-   picture, which is what keeps the row looking tidy. */
 .category-tile {
   display: block;
   background-color: #FFFFFF;
@@ -749,8 +691,6 @@ h1, h2, h3, h4 {
   border-color: var(--teal);
 }
 
-/* A fixed height plus object-fit crops every picture to the same shape,
-   even when the original images are different sizes */
 .category-tile img {
   width: 100%;
   height: 130px;
@@ -767,8 +707,6 @@ h1, h2, h3, h4 {
   margin-bottom: 0;
 }
 
-
-/* One painting box, used on the home page, the gallery and the chat */
 .painting-card {
   display: block;
   background-color: #FFFFFF;
@@ -786,8 +724,6 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
-/* The three featured works on the home page get extra height so they feel
-   more important than the rest */
 .painting-image-tall {
   height: 380px;
 }
@@ -824,9 +760,6 @@ h1, h2, h3, h4 {
   margin-top: 8px;
 }
 
-
-/* The two wide cards with a painting behind the words. The dark overlay is
-   what keeps the white text readable no matter which painting is behind it. */
 .promo-card {
   position: relative;
   height: 320px;
@@ -846,7 +779,6 @@ h1, h2, h3, h4 {
   background-color: rgba(0, 0, 0, 0.45);
 }
 
-/* position relative lifts the words above the dark overlay */
 .promo-inner {
   position: relative;
   padding: 34px;
@@ -864,8 +796,6 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 
-
-/* The row of four things we offer */
 .service-icon {
   width: 52px;
   height: 52px;
@@ -948,7 +878,6 @@ h1, h2, h3, h4 {
   border-color: var(--teal);
 }
 
-/* The chosen filter is filled in, so it is obvious which one is active */
 .filter-pill-active {
   background-color: var(--teal);
   border-color: var(--teal);
@@ -998,8 +927,6 @@ h1, h2, h3, h4 {
   box-shadow: none;
 }
 
-
-/* The painting details page */
 .detail-title {
   font-size: 44px;
   margin-bottom: 6px;
@@ -1022,8 +949,6 @@ h1, h2, h3, h4 {
   font-size: 16px;
 }
 
-/* The label part of each fact line, set to a fixed width so all the
-   values line up down the page */
 .detail-facts span {
   display: inline-block;
   width: 110px;
@@ -1056,7 +981,6 @@ h1, h2, h3, h4 {
 }
 
 
-/* The colour squares found by our AI code */
 .colour-row {
   display: flex;
   flex-wrap: wrap;
@@ -1097,8 +1021,6 @@ h1, h2, h3, h4 {
   padding: 24px;
 }
 
-/* A fixed height with scrolling keeps the input box in the same place no
-   matter how long the conversation gets */
 .chat-messages {
   height: 280px;
   overflow-y: auto;
@@ -1110,7 +1032,6 @@ h1, h2, h3, h4 {
   margin-bottom: 14px;
 }
 
-/* The user's own messages are pushed over to the right hand side */
 .chat-row-user {
   justify-content: flex-end;
 }
@@ -1181,8 +1102,6 @@ h1, h2, h3, h4 {
   box-shadow: none;
 }
 
-
-/* Shown while waiting, and when a list comes back empty */
 .loading-text {
   color: var(--grey);
   font-size: 15px;
@@ -1207,9 +1126,6 @@ h1, h2, h3, h4 {
   margin-bottom: 0;
 }
 
-
-/* The bottom of every page. It is dark so the page ends on a firm line
-   instead of fading out. */
 .site-footer {
   background-color: var(--dark);
   padding: 70px 0 30px 0;
@@ -1298,9 +1214,6 @@ h1, h2, h3, h4 {
   font-size: 13px;
 }
 
-
-/* TABLET. Anything narrower than 992 pixels. Headings come down a step and
-   the bands lose some of their padding so less scrolling is needed. */
 @media (max-width: 991px) {
   .hero-headline {
     font-size: 58px;
@@ -1343,15 +1256,13 @@ h1, h2, h3, h4 {
 }
 
 
-/* PHONE. Anything narrower than 768 pixels. The menu links wrap onto their
-   own line and every heading comes down again. */
+
 @media (max-width: 767px) {
   .hero-headline {
     font-size: 38px;
   }
 
-  /* On a phone the dark card drops below the headline and turns into a
-     short wide strip with the picture on the left */
+
   .hero-top {
     flex-direction: column;
     gap: 20px;
@@ -1371,9 +1282,6 @@ h1, h2, h3, h4 {
     flex-shrink: 0;
   }
 
-  /* On a phone five paintings side by side would each be too thin to see.
-     Instead the wall slides sideways, and each painting keeps a sensible
-     width. The scroll-snap lines make it stop neatly on each one. */
   .hero-wall {
     height: 240px;
     margin-top: 24px;
@@ -1386,7 +1294,6 @@ h1, h2, h3, h4 {
     scroll-snap-align: start;
   }
 
-  /* On a touch screen there is no hover, so the names stay visible */
   .hero-wall-caption {
     transform: translateY(0);
     font-size: 13px;
@@ -1424,7 +1331,6 @@ h1, h2, h3, h4 {
     padding: 30px 0;
   }
 
-  /* The menu bar becomes two rows, the brand on top and the links below */
 
   .painting-image {
     height: 160px;
@@ -1454,7 +1360,6 @@ h1, h2, h3, h4 {
     font-size: 24px;
   }
 
-  /* Buttons go full width on a phone so they are easy to tap */
   .detail-buttons .btn {
     width: 100%;
   }
