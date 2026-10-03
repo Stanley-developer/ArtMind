@@ -4,13 +4,15 @@ import { useState } from 'react'
 import ChatMessage from './ChatMessage'
 
 const suggestions = [
-  'Show blue abstract paintings',
-  'Find nature oil paintings',
-  'What can you do?'
+  'Show me popular paintings',
+  'Find abstract paintings',
+  'Show paintings by an artist',
+  'What oil paintings are available?'
 ]
 
 function ChatWindow({ messages, onSend, waiting }) {
   const [text, setText] = useState('')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -22,7 +24,61 @@ function ChatWindow({ messages, onSend, waiting }) {
   return (
     <div className="chat-window">
 
-      <div className="chat-messages">
+  <div className="chat-header">
+
+    <div>
+      <p className="chat-header-label">ARTMIND AI</p>
+      <h2 className="chat-header-title">Assistant</h2>
+    </div>
+<div className="chat-menu-wrapper">
+
+  <button
+    type="button"
+    className="chat-menu-button"
+    aria-label="Chat options"
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    ⋯
+  </button>
+
+  {menuOpen && (
+    <div className="chat-menu">
+
+      <button
+        type="button"
+        onClick={() => {
+          setMenuOpen(false)
+          window.location.reload()
+        }}
+      >
+        New conversation
+      </button>
+
+      <button
+        type="button"
+        onClick={() => {
+          setMenuOpen(false)
+          window.location.reload()
+        }}
+      >
+        Clear chat
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setMenuOpen(false)}
+      >
+        About ArtMind
+      </button>
+
+    </div>
+  )}
+
+</div>
+
+  </div>
+
+  <div className="chat-messages">
         {messages.map((message, index) => (
           <ChatMessage
             key={index}

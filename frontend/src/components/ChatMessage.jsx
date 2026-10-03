@@ -6,15 +6,22 @@ function ChatMessage({ sender, text, paintings }) {
   const isUser = sender === 'user'
 
   return (
-    <div className={isUser ? 'chat-row chat-row-user' : 'chat-row'}>
-      <div className={isUser ? 'chat-bubble chat-bubble-user' : 'chat-bubble'}>
+    <div className={`chat-row ${isUser ? 'chat-row-user' : ''}`}>
+
+      {!isUser && (
+  <div className="chat-avatar">
+    ✦
+  </div>
+)}
+
+      <div className={`chat-bubble ${isUser ? 'chat-bubble-user' : ''}`}>
 
         <p className="chat-text">{text}</p>
 
         {paintings && paintings.length > 0 ? (
           <div className="row g-2 mt-3">
             {paintings.map((painting) => (
-              <div className="col-4" key={painting.id}>
+              <div className="col-12 col-sm-6 col-md-4" key={painting.id}>
                 <PaintingCard
                   id={painting.id}
                   title={painting.title}
@@ -27,6 +34,7 @@ function ChatMessage({ sender, text, paintings }) {
         ) : null}
 
       </div>
+
     </div>
   )
 }

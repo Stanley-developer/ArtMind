@@ -4,11 +4,6 @@ import { useState } from 'react'
 import ChatWindow from '../components/ChatWindow'
 import { artworks, categories, mediums } from '../data/artworks'
 
-const examples = [
-  'Show me landscape paintings',
-  'What can you do',
-  'Popular paintings'
-]
 
 function splitIntoWords(lowered) {
   const cleaned = lowered.replace(/[^a-z0-9 ]/g, ' ')
@@ -173,20 +168,6 @@ function Chatbot() {
           <ChatWindow messages={messages} onSend={handleSend} waiting={waiting} />
 
           
-          <div className="mt-4">
-            <p className="small-heading">Try one of these</p>
-            <div className="chat-suggestions">
-              {examples.map((question) => (
-                <button
-                  key={question}
-                  className="suggestion-chip"
-                  onClick={() => handleSend(question)}
-                >
-                  {question}
-                </button>
-              ))}
-            </div>
-          </div>
 
         </div>
       </div>

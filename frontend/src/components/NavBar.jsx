@@ -105,6 +105,9 @@ function NavBar() {
 
       </div>
 
+      {/* =====================================================
+          MOBILE FULL-SCREEN MENU
+          ===================================================== */}
 
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
 
