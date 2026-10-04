@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/>
+</marker>
+</defs>
+<rect width="1180" height="760" fill="#ffffff"/>
+<text x="590" y="44" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#1b1b1b" text-anchor="middle">Data Flow Diagram - Level 0</text>
+<text x="590" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#666" text-anchor="middle">Context diagram, the system as a single process</text>
+<line x1="60" y1="92" x2="1120" y2="92" stroke="#ddd" stroke-width="1.5"/>
+<rect x="90" y="180" width="220" height="90" rx="2" fill="#f3efe9" stroke="#6b5b45" stroke-width="2"/>
+<text x="200" y="225" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b1b1b" font-weight="600" text-anchor="middle" dominant-baseline="central">VISITOR</text>
+<rect x="90" y="400" width="220" height="90" rx="2" fill="#f3efe9" stroke="#6b5b45" stroke-width="2"/>
+<text x="200" y="445" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b1b1b" font-weight="600" text-anchor="middle" dominant-baseline="central">ADMIN</text>
+<circle cx="620" cy="300" r="115" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="505" y1="251.7" x2="735" y2="251.7" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="620" y="217.2" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">0</text>
+<text x="620" y="320.7" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">ArtMind System</text>
+<rect x="820" y="560" width="300" height="70" fill="#eef4f8" stroke="#2f4f6f" stroke-width="2"/>
+<line x1="874" y1="560" x2="874" y2="630" stroke="#2f4f6f" stroke-width="2"/>
+<text x="847" y="595" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2f4f6f" font-weight="700" text-anchor="middle" dominant-baseline="central">D1</text>
+<text x="997" y="595" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">artmind.db</text>
+<line x1="310" y1="195" x2="503" y2="255" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="404" y="170" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#4a4a4a" text-anchor="middle">search, filter, upload,</text>
+<text x="404" y="190" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#4a4a4a" text-anchor="middle">chat, save favourite</text>
+<line x1="503" y1="312" x2="310" y2="262" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="404" y="322" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#4a4a4a" text-anchor="middle">paintings, AI results,</text>
+<text x="404" y="342" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#4a4a4a" text-anchor="middle">replies, dashboard</text>
+<line x1="310" y1="418" x2="518" y2="370" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="412" y="364" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#4a4a4a" text-anchor="middle">log in, build AI data</text>
+<line x1="522" y1="402" x2="310" y2="468" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="412" y="470" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#4a4a4a" text-anchor="middle">analytics, view counts</text>
+<line x1="700" y1="390" x2="880" y2="556" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="700" y="490" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#4a4a4a" text-anchor="start">reads and writes</text>
+<line x1="1010" y1="556" x2="790" y2="395" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="90" y="690" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#555">Level 0 shows the whole system as ONE process, and who talks to it.</text>
+<text x="90" y="712" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#555">Squares are external entities. The circle is the process. The open box is a data store.</text>
+<text x="590" y="738" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#999" text-anchor="middle">ArtMind - Aptech eProject - github.com/Stanley-developer/ArtMind</text>
+</svg>
