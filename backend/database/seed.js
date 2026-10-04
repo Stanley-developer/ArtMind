@@ -332,9 +332,9 @@ function printSummary() {
   console.log('Tags:          ' + tagCount.total)
   console.log('Painting tags: ' + paintingTagCount.total)
   console.log('')
-  console.log('Demo logins')
-  console.log('Admin:   admin@artmind.com / admin123')
-  console.log('Student: student@artmind.com / student123')
+  console.log('Demo logins, sign in with the username not the email')
+  console.log('Admin:   admin / admin123')
+  console.log('Student: student / student123')
   console.log('')
 }
 
