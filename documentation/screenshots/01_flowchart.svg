@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1620" viewBox="0 0 1180 1620">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/>
+</marker>
+</defs>
+<rect width="1180" height="1620" fill="#ffffff"/>
+<text x="590" y="44" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#1b1b1b" text-anchor="middle">Flowchart</text>
+<text x="590" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#666" text-anchor="middle">A visitor finding a painting on ArtMind</text>
+<line x1="60" y1="92" x2="1120" y2="92" stroke="#ddd" stroke-width="1.5"/>
+<rect x="505" y="115" width="170" height="50" rx="25" fill="#2f4f6f" stroke="#2f4f6f" stroke-width="2"/>
+<text x="590" y="140" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#ffffff" font-weight="600" text-anchor="middle" dominant-baseline="central">START</text>
+<line x1="590" y1="165" x2="590" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="440" y="200" width="300" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="590" y="227" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Open the ArtMind website</text>
+<line x1="590" y1="254" x2="590" y2="289" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="440" y="289" width="300" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="590" y="316" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Home page</text>
+<polyline points="590,343 590,383" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<polyline points="215,383 965,383" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<line x1="215" y1="383" x2="215" y2="418" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="590" y1="383" x2="590" y2="418" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="965" y1="383" x2="965" y2="418" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="90" y="418" width="250" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="215" y="445" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Browse the gallery</text>
+<rect x="465" y="418" width="250" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="590" y="445" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Search a sentence</text>
+<rect x="840" y="418" width="250" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="965" y="445" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Upload a photo</text>
+<line x1="215" y1="472" x2="215" y2="512" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="590" y1="472" x2="590" y2="512" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="965" y1="472" x2="965" y2="512" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="90" y="512" width="250" height="76" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="215" y="540.625" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Pick a category or medium</text>
+<text x="215" y="559.375" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">filter</text>
+<rect x="465" y="512" width="250" height="76" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="590" y="540.625" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Pull out category, medium</text>
+<text x="590" y="559.375" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">and colour from the words</text>
+<rect x="840" y="512" width="250" height="76" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="965" y="531.25" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Run MobileNet in the</text>
+<text x="965" y="550" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">browser to get 1024</text>
+<text x="965" y="568.75" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">numbers</text>
+<polyline points="215,588 215,630" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<polyline points="590,588 590,630" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<polyline points="965,588 965,630" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<polyline points="215,630 965,630" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<line x1="590" y1="630" x2="590" y2="668" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="425" y="668" width="330" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="590" y="695" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Search the database</text>
+<line x1="590" y1="722" x2="590" y2="762" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<polygon points="590,762 720,822 590,882 460,822" fill="#fdf6e3" stroke="#b08900" stroke-width="2"/>
+<text x="590" y="822" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="600" text-anchor="middle" dominant-baseline="central">Any results?</text>
+<polyline points="460,822 300,822 300,930" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/><text x="400" y="806" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#4a4a4a" text-anchor="middle" dominant-baseline="central">No</text>
+<polyline points="720,822 880,822 880,930" fill="none" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/><text x="790" y="806" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#4a4a4a" text-anchor="middle" dominant-baseline="central">Yes</text>
+<rect x="155" y="930" width="290" height="76" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="300" y="950.5" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Show a friendly message</text>
+<text x="300" y="968" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">and suggest clearing the</text>
+<text x="300" y="985.5" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">filters</text>
+<rect x="735" y="930" width="290" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="880" y="947.625" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Show the matching</text>
+<text x="880" y="966.375" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">paintings</text>
+<line x1="880" y1="984" x2="880" y2="1024" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="735" y="1024" width="290" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="880" y="1051" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">User opens one painting</text>
+<line x1="880" y1="1078" x2="880" y2="1118" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="735" y="1118" width="290" height="76" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="880" y="1147.25" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Record the view and add</text>
+<text x="880" y="1164.75" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">one to the view count</text>
+<line x1="880" y1="1194" x2="880" y2="1234" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="735" y="1234" width="290" height="76" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="880" y="1263.25" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Find similar paintings in</text>
+<text x="880" y="1280.75" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">the same category</text>
+<line x1="880" y1="1310" x2="880" y2="1350" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="735" y="1350" width="290" height="54" rx="6" fill="#ffffff" stroke="#2f4f6f" stroke-width="2"/>
+<text x="880" y="1367.625" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Save, download or open a</text>
+<text x="880" y="1386.375" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">similar one</text>
+<polyline points="300,1006 300,1440" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<polyline points="880,1404 880,1440" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<polyline points="300,1440 880,1440" fill="none" stroke="#4a4a4a" stroke-width="2"/>
+<line x1="590" y1="1440" x2="590" y2="1478" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="505" y="1478" width="170" height="50" rx="25" fill="#2f4f6f" stroke="#2f4f6f" stroke-width="2"/>
+<text x="590" y="1503" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#ffffff" font-weight="600" text-anchor="middle" dominant-baseline="central">END</text>
+<text x="590" y="1598" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#999" text-anchor="middle">ArtMind - Aptech eProject - github.com/Stanley-developer/ArtMind</text>
+</svg>

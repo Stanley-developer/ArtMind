@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="1900" viewBox="0 0 1380 1900">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/>
+</marker>
+</defs>
+<rect width="1380" height="1900" fill="#ffffff"/>
+<text x="690" y="44" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#1b1b1b" text-anchor="middle">Data Flow Diagram - Level 1</text>
+<text x="690" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#666" text-anchor="middle">The eleven processes inside the ArtMind system</text>
+<line x1="60" y1="92" x2="1320" y2="92" stroke="#ddd" stroke-width="1.5"/>
+<rect x="70" y="620" width="190" height="80" rx="2" fill="#f3efe9" stroke="#6b5b45" stroke-width="2"/>
+<text x="165" y="660" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b1b1b" font-weight="600" text-anchor="middle" dominant-baseline="central">VISITOR</text>
+<rect x="70" y="1490" width="190" height="80" rx="2" fill="#f3efe9" stroke="#6b5b45" stroke-width="2"/>
+<text x="165" y="1530" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1b1b1b" font-weight="600" text-anchor="middle" dominant-baseline="central">ADMIN</text>
+<circle cx="660" cy="180" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="152.28" x2="726" y2="152.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="132.48000000000002" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="660" y="191.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Browse and Filter</text>
+<circle cx="660" cy="330" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="302.28" x2="726" y2="302.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="282.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+<text x="660" y="341.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Smart Search</text>
+<circle cx="660" cy="480" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="452.28" x2="726" y2="452.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="432.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="660" y="491.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Chatbot</text>
+<circle cx="660" cy="630" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="602.28" x2="726" y2="602.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="582.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">4</text>
+<text x="660" y="641.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Image Recognition</text>
+<circle cx="660" cy="780" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="752.28" x2="726" y2="752.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="732.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">5</text>
+<text x="660" y="791.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">View a Painting</text>
+<circle cx="660" cy="930" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="902.28" x2="726" y2="902.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="882.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">6</text>
+<text x="660" y="941.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Recommend Similar</text>
+<circle cx="660" cy="1080" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="1052.28" x2="726" y2="1052.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="1032.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">7</text>
+<text x="660" y="1091.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Favourites</text>
+<circle cx="660" cy="1230" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="1202.28" x2="726" y2="1202.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="1182.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">8</text>
+<text x="660" y="1241.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Dashboard</text>
+<circle cx="660" cy="1380" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="1352.28" x2="726" y2="1352.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="1332.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">9</text>
+<text x="660" y="1383.4425" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Export PDF or</text>
+<text x="660" y="1400.3175" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Word</text>
+<circle cx="660" cy="1530" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="1502.28" x2="726" y2="1502.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="1482.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">10</text>
+<text x="660" y="1541.88" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Build AI Data</text>
+<circle cx="660" cy="1680" r="66" fill="#ffffff" stroke="#1f6f54" stroke-width="2.5"/>
+<line x1="594" y1="1652.28" x2="726" y2="1652.28" stroke="#1f6f54" stroke-width="2.5"/>
+<text x="660" y="1632.48" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#1f6f54" font-weight="700" text-anchor="middle" dominant-baseline="central">11</text>
+<text x="660" y="1683.4425" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">Register and Log</text>
+<text x="660" y="1700.3175" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">in</text>
+<line x1="265" y1="660" x2="588" y2="180" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="330" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="480" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="630" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="780" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="930" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="1080" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="1230" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="660" x2="588" y2="1380" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="700" x2="588" y2="1680" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="265" y1="1530" x2="588" y2="1530" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="1080" y="169" width="230" height="62" fill="#eef4f8" stroke="#2f4f6f" stroke-width="2"/>
+<line x1="1134" y1="169" x2="1134" y2="231" stroke="#2f4f6f" stroke-width="2"/>
+<text x="1107" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2f4f6f" font-weight="700" text-anchor="middle" dominant-baseline="central">D1</text>
+<text x="1222" y="191.25" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">paintings, categories,</text>
+<text x="1222" y="208.75" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">mediums, tags</text>
+<rect x="1080" y="469" width="230" height="62" fill="#eef4f8" stroke="#2f4f6f" stroke-width="2"/>
+<line x1="1134" y1="469" x2="1134" y2="531" stroke="#2f4f6f" stroke-width="2"/>
+<text x="1107" y="500" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2f4f6f" font-weight="700" text-anchor="middle" dominant-baseline="central">D2</text>
+<text x="1222" y="500" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">favourites</text>
+<rect x="1080" y="669" width="230" height="62" fill="#eef4f8" stroke="#2f4f6f" stroke-width="2"/>
+<line x1="1134" y1="669" x2="1134" y2="731" stroke="#2f4f6f" stroke-width="2"/>
+<text x="1107" y="700" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2f4f6f" font-weight="700" text-anchor="middle" dominant-baseline="central">D3</text>
+<text x="1222" y="700" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">view_history</text>
+<rect x="1080" y="869" width="230" height="62" fill="#eef4f8" stroke="#2f4f6f" stroke-width="2"/>
+<line x1="1134" y1="869" x2="1134" y2="931" stroke="#2f4f6f" stroke-width="2"/>
+<text x="1107" y="900" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2f4f6f" font-weight="700" text-anchor="middle" dominant-baseline="central">D4</text>
+<text x="1222" y="900" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">chat_logs</text>
+<rect x="1080" y="1069" width="230" height="62" fill="#eef4f8" stroke="#2f4f6f" stroke-width="2"/>
+<line x1="1134" y1="1069" x2="1134" y2="1131" stroke="#2f4f6f" stroke-width="2"/>
+<text x="1107" y="1100" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2f4f6f" font-weight="700" text-anchor="middle" dominant-baseline="central">D5</text>
+<text x="1222" y="1100" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">uploads</text>
+<rect x="1080" y="1469" width="230" height="62" fill="#eef4f8" stroke="#2f4f6f" stroke-width="2"/>
+<line x1="1134" y1="1469" x2="1134" y2="1531" stroke="#2f4f6f" stroke-width="2"/>
+<text x="1107" y="1500" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#2f4f6f" font-weight="700" text-anchor="middle" dominant-baseline="central">D6</text>
+<text x="1222" y="1500" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#1b1b1b" font-weight="400" text-anchor="middle" dominant-baseline="central">users</text>
+<line x1="732" y1="180" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="330" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="480" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="480" x2="1074" y2="900" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="630" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="630" x2="1074" y2="1100" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="780" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="780" x2="1074" y2="700" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="930" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="1080" x2="1074" y2="500" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="1230" x2="1074" y2="500" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="1230" x2="1074" y2="700" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="1380" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="1530" x2="1074" y2="200" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="732" y1="1680" x2="1074" y2="1500" stroke="#4a4a4a" stroke-width="2" marker-end="url(#ah)"/>
+<text x="70" y="1780" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#555">Level 1 opens the single process from Level 0 into the eleven processes inside it.</text>
+<text x="70" y="1804" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#555">Processes 1, 5, 7, 8 and 11 are built in Stanley's five route files.</text>
+<text x="70" y="1828" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#555">Process 4 runs MobileNet in the browser and sends only the 1024 numbers to the server.</text>
+<text x="70" y="1852" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" fill="#555">D1 is the busiest store because almost every feature reads the paintings table.</text>
+<text x="690" y="1878" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#999" text-anchor="middle">ArtMind - Aptech eProject - github.com/Stanley-developer/ArtMind</text>
+</svg>
